@@ -1,7 +1,8 @@
 const Work = ({ setVisibleSection, headerRef, id }) => {
     return (
         <div>
-            Work
+            <p>Work</p>
+            <div>Content</div>
         </div>
     )
 }

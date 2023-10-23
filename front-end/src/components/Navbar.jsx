@@ -74,10 +74,10 @@ const Navbar = props => {
                 >
                     {
                         scrollDirection === 'down' ?
-                            <NavItemDown className={visibleSection === menuItem.section ? "active" : "false"}
+                            <NavItemDown onClick={() => toggleNav()} className={visibleSection === menuItem.section ? "active" : "false"}
                                 href={`#${menuItem.section}`}>{menuItem.text}</NavItemDown>
                             :
-                            <NavItemUp className={visibleSection === menuItem.section ? "active" : "false"}
+                            <NavItemUp onClick={() => toggleNav()} className={visibleSection === menuItem.section ? "active" : "false"}
                                 href={`#${menuItem.section}`}>{menuItem.text}</NavItemUp>
                     }
                 </li>
@@ -85,12 +85,12 @@ const Navbar = props => {
         </ul>
     )
     return (
-        <header>
+        <header className={isMobile ? ` ${navOpen ? 'menu-open' : ''}` : ''}>
 
             {/* <div className="menu-toggle" id="hamburger" onClick={() => toggleNav()}>
                 {navOpen ?  <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faBars} />}
             </div> */}
-            <div className={!isMobile ? `overlay ${navOpen ? 'menu-open' : ''}` : 'overlay'}></div>
+            <div className={isMobile ? `overlay ${navOpen ? 'menu-open' : ''}` : 'overlay'}></div>
             <div className="container">
                 <nav className={isMobile ? ` ${navOpen ? 'menu-open' : ''}` : ''}>
                     <h1 className="brand">

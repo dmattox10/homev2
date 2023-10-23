@@ -1,7 +1,8 @@
 const Hours = ({ setVisibleSection, headerRef, id }) => {
     return (
         <div>
-            Hours
+            <p>Hours</p>
+            <div>Content</div>
         </div>
     )
 }

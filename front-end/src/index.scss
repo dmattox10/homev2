@@ -4,6 +4,14 @@
 	box-sizing: border-box;
 }
 
+#root {
+	z-index: 0;
+	position: relative;
+	div:last-child {
+		opacity: .99;
+	  }
+}
+
 html{
 	font-size: 10px;
 	font-family: "Roboto Cn", sans-serif;
@@ -26,25 +34,30 @@ header{
 	// position: relative;
 	position: sticky;
     top: 0px;
-    z-index: 999;
+    z-index: 10;
   	overflow: hidden;
 	height: 8rem;
 }
-
-.App {
-	position: relative;
-	z-index: 10;
-}
+// #root {
+// 	height: 100%;
+// }
+// .App {
+// 	position: relative;
+// 	z-index: 997;
+// 	height: 100%;
+// }
 
 .reset {
 	all: unset;
   }  
 
-// .container{
-// 	max-width: 120rem;
-// 	width: 90%;
-// 	margin: 0 auto;
-// }
+.container{
+	// max-width: 120rem;
+	// width: 90%;
+	// margin: 0 auto;
+	z-index: 11;
+	position: relative;
+}
 
 .menu-toggle{
 	position: fixed;
@@ -192,7 +205,7 @@ nav ul li a.down::after{
 // }
 
 .overlay{
-	background-color: rgba(0,0,0,.95);
+	background-color: rgba(0,0,0,.7);
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -219,9 +232,41 @@ nav ul li a.active::after{
 	display: flex;
 	align-items: center;
 	height: 100%;
+	background: transparent;
 }
-
-
+#root {
+	// background: url("https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") fixed no-repeat;
+	// background-size: cover;
+	height: 100%;
+	.App {
+		background: transparent;
+		section {
+			min-height: 100vh;
+			z-index: 998;
+			position: relative;
+			min-height: 100vh;
+			margin: 0 5%;
+			.section-body {
+				color: white;
+				z-index: 999;
+				position: relative;
+				background-color: rgba(0,0,0,.7);
+				div {
+					z-index: 1000;
+					margin: 5rem 5%;
+					font-size: large;
+					p {
+						text-align: center;
+					   
+					   }
+					div {
+						margin-top: 6rem;
+					}
+				}
+			}
+		}
+	}
+}
 
 @keyframes slideIn {
 	from{
@@ -235,11 +280,26 @@ nav ul li a.active::after{
 @media screen and (max-width: 1000px){
 	header {
 		height: 100vh;
-		z-index: 0;
+		z-index: 10000;
 		display: flex;
+		margin-bottom: -500px;
+		background: transparent;
+	}
+	header.menu-open {
+		position: relative;
+		margin-bottom: 0;
 	}
 	.menu-toggle{
+		position: relative;
 		display: block;
+	}
+	svg {
+		position: relative;
+		z-index: 9998;
+		path {
+			position: relative;
+			z-index: 9999;
+		}
 	}
 
 	nav{
@@ -247,10 +307,12 @@ nav ul li a.active::after{
 		align-items: center;
 		height: 100vh;
 		text-align: center;
-		z-index: 200;
+		z-index: 12;
 		display: flex;
 		flex-direction: column;
-
+		margin-bottom: 10rem;
+		margin-top: auto;
+		background: transparent;
 	}
 
 	nav ul{
@@ -269,6 +331,13 @@ nav ul li a.active::after{
 	}
 	.brand {
 		width: 100%;
+		margin-top: 3rem;
+		position: relative;
+		z-index: 9996;
+		a {
+			position: relative;
+			z-index: 9997;
+		}
 	}
 
 	.navbar-expand {
@@ -287,22 +356,64 @@ nav ul li a.active::after{
 	  transform: scale(1);
 	  opacity: 1;
 	  z-index: 0;
+	//   position: relative;
+	//   z-index: 9995;
 	//   justify-content: space-evenly;
-
+	.brand {
+		width: 100%;
+		margin-top: 3rem;
+		position: relative;
+		z-index: 9996;
+		a {
+			position: relative;
+			z-index: 9997;
+		}
+	}
   }
+
+  #root {
+	background: url("https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") fixed no-repeat;
+	background-size: cover;
+	height: 100%;
+	.App {
+		background: transparent;
+		section {
+			min-height: 100vh;
+			z-index: 998;
+			position: relative;
+			background: transparent;
+			.section-body {
+				color: white;
+				z-index: 999;
+				position: relative;
+				background: transparent;
+				div {
+					z-index: 1000;
+					background-color: rgba(0,0,0,.7);
+					margin: 0 2rem;
+					p {
+						text-align: center;
+					   
+					   }
+					div {
+						margin-top: 6rem;
+						background: transparent;
+					}
+				}
+			}
+		}
+		
+		
+	  }
+}
 }
 
 .hide {
 	display: none;
 }
 
-section {
-	min-height: 100vh;
-}
 
-.section-body {
-	color: white;
-}
+
 
 .Iam {
 	padding: 2em 5em;

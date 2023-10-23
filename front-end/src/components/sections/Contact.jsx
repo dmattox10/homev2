@@ -2,8 +2,9 @@ import { useInView } from "react-intersection-observer"
 
 const Contact = (props) => {
     return (
-        <div className="reset">
-            Contact
+        <div className="">
+            <p>Contact</p>
+            <div>Content</div>
         </div>
     )
 }

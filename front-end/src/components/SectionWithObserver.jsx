@@ -19,7 +19,7 @@ const SectionWithObserver  = (props) => {
 
   return (
     <section id={id} ref={ref}>
-      <div className={isMobile ? navOpen ? "hide" : "section-body" : 'section-body'}>
+      <div className={isMobile ? navOpen ? "section-body hide" : "section-body" : 'section-body'}>
         {children}
       </div>
     </section>
