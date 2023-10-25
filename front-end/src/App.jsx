@@ -51,11 +51,13 @@ const App = () => {
     <MyContext.Provider value={{ isPro, setPro, visibleSection, menus }}>
       <Navbar setNavOpen={setNavOpen} navOpen={navOpen} menus={menus} headerRef={headerRef} visibleSection={visibleSection} />
       <div className='App'>
+        <div className='wrap'>
         {menus.map((Entry, index) => (
-          <SectionWithObserver id={Entry.section} key={index} {... { setVisibleSection, headerRef, navOpen }} >
+          <SectionWithObserver id={Entry.section} key={index} {... { setVisibleSection, headerRef, navOpen, visibleSection }} >
             <Entry.component />
           </SectionWithObserver>
         ))}
+        </div>
       </div>
     </MyContext.Provider>
   )

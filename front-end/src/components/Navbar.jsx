@@ -62,7 +62,6 @@ const Navbar = props => {
 
     function toggleNav() {
         setNavOpen(prevNav => !prevNav)
-        console.log(isMobile)
     }
     let isMobile = useScreenWidth()
     let NavItems = (
@@ -99,20 +98,20 @@ const Navbar = props => {
                                 isMobile ?
                                     navOpen ?
                                         <StyledIcon>
-                                            <FontAwesomeIcon color='white' icon={faX} />
+                                            <FontAwesomeIcon  className='toggle' color='white' icon={faX} />
                                         </StyledIcon>
                                         :
                                         <StyledIcon>
-                                            <FontAwesomeIcon color='white' icon={faPlus} />
+                                            <FontAwesomeIcon className='toggle' color='white' icon={faPlus} />
                                         </StyledIcon>
                                     :
                                     navOpen ?
                                         <StyledIcon>
-                                            <FontAwesomeIcon color='white' icon={faPlus} />
+                                            <FontAwesomeIcon className='toggle' color='white' icon={faPlus} />
                                         </StyledIcon>
                                         :
                                         <StyledIcon>
-                                            <FontAwesomeIcon color='white' icon={faX} />
+                                            <FontAwesomeIcon className='toggle' color='white' icon={faX} />
                                         </StyledIcon>
                             }
                         </a>
