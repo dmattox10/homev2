@@ -1,6 +1,6 @@
 const Hours = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div>
+        <div className="section-content">
             <p>Hours</p>
             <div>Content</div>
         </div>

@@ -1,8 +1,14 @@
 const Services = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div>
+        <div className="section-content">
             <p>Services</p>
-            <div>Content</div>
+            <div>
+            <div className="hero">
+                <div className="block-0">hi</div>
+                <div className="block-1">hi</div>
+                <div className="block-2">hi</div>
+            </div>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 const Work = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div>
+        <div className="section-content">
             <p>Work</p>
             <div>Content</div>
         </div>

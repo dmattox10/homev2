@@ -1,6 +1,6 @@
 const Testimonials = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div>
+        <div className="section-content">
             <p>Testimonials</p>
             <div>Content</div>
         </div>
