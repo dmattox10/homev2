@@ -4,7 +4,9 @@ const Services = ({ setVisibleSection, headerRef, id }) => {
             <p>Services</p>
             <div>
             <div className="hero">
-                <div className="block-0">hi</div>
+                <div className="bg-code block-0 clip-text">
+                    LEARN
+                </div>
                 <div className="block-1">hi</div>
                 <div className="block-2">hi</div>
             </div>
