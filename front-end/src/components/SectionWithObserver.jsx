@@ -4,7 +4,7 @@ import Window from "./Window"
 const SectionWithObserver  = (props) => {
   const { children, setVisibleSection, id, navOpen, visibleSection } = props
   const { ref } = useInView({
-    threshold: 0.75,
+    threshold: 0.6,
     // triggerOnce: true,
     onChange: (inView, entry) => {
       if (inView) {

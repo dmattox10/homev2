@@ -66,12 +66,32 @@ header {
 }
 
 .container {
-	// max-width: 120rem;
-	// width: 90%;
-	// margin: 0 auto;
 	z-index: 11;
 	position: relative;
-}
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+  }
+
+  @media (min-width: 768px) {
+	.container {
+	  width: 750px;
+	}
+  }
+
+  @media (min-width: 992px) {
+	.container {
+	  width: 970px;
+	}
+  }
+
+  @media (min-width: 1200px) {
+	.container {
+	  width: 1170px;
+	}
+  }
+  
 
 .menu-toggle {
 	position: fixed;
@@ -371,28 +391,29 @@ nav ul li a.active::after {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-
 		// background: transparent;
 		.wrap {
 			background-color: $new-grey;
 			position: relative;
 			z-index: 9;
-
+			height: 100%;
 			section {
-				min-height: 100vh;
 				z-index: 8;
 				position: relative;
+				height: 100vh;
 				min-height: 100vh;
 				margin: 0 5%;
-
+				
 				.section-body {
-					color: white;
+					// color: white;
 					z-index: 7;
 					position: relative;
 					// margin: 5rem 5%;
 					padding-top: 4rem;
-					height: 85vw;
-
+					height: 90%;
+					// width: 100%;
+					max-width: 95%;
+					margin: 0 auto;
 					// background-color: rgba(0,0,0,.7);
 					div {
 						z-index: 6;
@@ -419,77 +440,120 @@ nav ul li a.active::after {
 
 	div {
 		height: 100%;
-		padding-top: 2.5rem;
+		// padding-top: 2.5rem;
 
 		.hero {
-			padding-top: 4rem;
+			padding-top: 7rem;
 			text-align: center;
 		}
 	}
 }
 
 
-/* Clip text element */
-.clip-text {
-    // font-size: 6em;
-    font-weight: bold;
-    line-height: 1;
-    position: relative;
-    display: inline-block;
-    // margin: .25em;
-    padding: .5em .75em;
-    text-align: center;
-    /* Color fallback */
-    // color: #fff;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.hero {
+	position: relative;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(2, 50%);
+  	grid-template-rows: repeat(2, 50%);
+	grid-template-areas:
+		"A C"
+		"B C";
+	height: inherit;
+	padding-top: 1rem;
 }
 
-.clip-text:before,
-.clip-text:after {
-    position: absolute;
-    content: '';
+.bg-code {
+	background: url('./assets/code-small.jpg') center;
+	// background-attachment: cover;
+	width: 100%;
+	background-size: cover;
+ 	 
 }
 
-/* Background */
-.clip-text:before {
-    z-index: -2;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: inherit;
+.bg-pitt {
+	background: url('./assets/pitt-small.jpg') center;
+	// background-attachment: cover;
+	width: 100%;
+	background-size: cover;
 }
 
-/* Text Background (black zone) */
-.clip-text:after {
-    position: absolute;
-    z-index: -1;
-    top: .125em;
-    right: .125em;
-    bottom: .125em;
-    left: .125em;
-    background-color: #000;
+.text {
+	background-color: white;
+	color: black;
+	font-size: 8vw; /* Responsive font size */
+	font-weight: bold;
+	// margin: 0 auto; /* Center the text container */
+	// padding: 10px;
+	width: 100%;
+	text-align: center; /* Center text */
+	position: absolute; /* Position text */
+	top: 50%; /* Position text in the middle */
+	left: 50%; /* Position text in the middle */
+	transform: translate(-50%, -50%); /* Position text in the middle */
+	// mix-blend-mode: screen; /* This makes the cutout text possible */
+	position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+
+.full {
+	width: 100%;
 }
 
-/* Change the background position to display letter when the black zone isn't here */
-.clip-text--no-textzone:before {
-    background-position: -.75em 0;
+.block-0 {
+	grid-area: A;
+	height: 100%;
+	// margin-top: 1rem;
+	border-bottom-left-radius: 1.25rem;
 }
 
-.clip-text--no-textzone:after {
-    content: none;
+
+.block-1 {
+	grid-area: B;
+	height: 100%;
+	background: green;
+	// margin-top: 1rem;
+
+
 }
 
-/* Use Background-size cover for photo background and no-repeat background */
-.clip-text--cover,
-.clip-text--cover:before {
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-            background-size: cover;
-  background-position: 50% 50%;
+.bl {
+	border-bottom-left-radius: 1.25rem;
 }
+
+.br {
+	border-bottom-right-radius: 1.25rem;
+}
+
+.block-2 {
+	grid-area: C;
+	height: 100%;
+	background: blue;
+	// margin-top: 1rem;
+
+}
+
+// margin: 3rem 3rem 6rem 3rem;
+
+.hide {
+	display: none;
+}
+
+/* Knockout text within a dark area */
+.multiply {
+	color: white;
+	mix-blend-mode: multiply;
+	background-color: rgb(47, 47, 47);
+  }
+  
+  /* Knockout text within a bright area */
+  .screen {
+	color: $new-grey;
+	mix-blend-mode: screen;
+	background-color: rgb(244, 220, 211);
+  }
 
 @keyframes slideIn {
 	from {}
@@ -606,18 +670,18 @@ nav ul li a.active::after {
 		background: url("https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") fixed no-repeat;
 		background-size: cover;
 		height: 100%;
-
+		width: 100%;
 		.App {
 			background: transparent;
-
+			width: 100%;
 			.wrap {
 				background-color: transparent;
-
 				section {
 					min-height: 100vh;
 					z-index: 998;
 					position: relative;
 					background: transparent;
+					width: 100%;
 
 					.section-body {
 						color: $white;
@@ -646,21 +710,67 @@ nav ul li a.active::after {
 			}
 		}
 	}
-}
+
 
 .hero {
 	position: relative;
 	display: grid;
 	grid-auto-flow: column;
+	grid-template-columns: repeat(1, 100%);
+  	grid-template-rows: repeat(3, 33%);
 	grid-template-areas:
-		"A C"
-		"B C";
+		"A"
+		"B"
+		"C";
 	height: inherit;
 	padding-top: 1rem;
 }
 
 .bg-code {
 	background: url('./assets/code-small.jpg') center;
+	// background-attachment: cover;
+	width: 100%;
+	background-size: cover;
+ 	 
+}
+
+.bg-pitt {
+	background: url('./assets/pitt-small.jpg') center;
+	// background-attachment: cover;
+	width: 100%;
+	background-size: cover;
+}
+
+.text {
+	background-color: white;
+	color: black;
+	font-size: 10vw; /* Responsive font size */
+	font-weight: bold;
+	// margin: 0 auto; /* Center the text container */
+	// padding: 10px;
+	width: 100%;
+	text-align: center; /* Center text */
+	position: absolute; /* Position text */
+	top: 50%; /* Position text in the middle */
+	left: 50%; /* Position text in the middle */
+	transform: translate(-50%, -50%); /* Position text in the middle */
+	// mix-blend-mode: screen; /* This makes the cutout text possible */
+	position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+
+  .text-red {
+	color: crimson;
+  }
+
+  .text-grey {
+	color: #eee;
+  }
+
+.full {
+	width: 100%;
 }
 
 .block-0 {
@@ -668,38 +778,6 @@ nav ul li a.active::after {
 	height: 100%;
 	// margin-top: 1rem;
 	border-bottom-left-radius: 1.25rem;
-
-	// .image {
-	// 	background: url('./assets/code-small.jpg') center no-repeat;
-		// background-size: contain;
-		// margin: auto;
-		// width: 100%;
-	// 	.text {
-	// 		color: white;
-	// 		border: 4px white solid;
-	// 		mix-blend-mode: multiply;
-	// 		font: bolder 12vw monospace;
-	// 		text-align: center;
-	// 		margin: 0;
-	// 		cursor: pointer;
-	// 		transition: text-indent 0.5s;
-	// 		font-family: "Alfa Slab One", cursive;
-	// 		background-color: rgba(59, 2, 6, 1);
-	// 		outline: 4px rgba(59, 2, 6, 1) solid;
-	// 		height: 100%;
-	// 		&:hover {
-	// 			text-indent: 5px;
-	// 			transition: text-indent 0.5s;
-
-	// 			&::before {
-	// 				.text:hover::before {
-	// 					display: inline-block;
-	// 					content: "✈︎";
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 
 
@@ -708,82 +786,45 @@ nav ul li a.active::after {
 	height: 100%;
 	background: green;
 	// margin-top: 1rem;
+
+
+}
+
+.bl {
 	border-bottom-left-radius: 1.25rem;
+}
 
-
+.br {
+	border-bottom-right-radius: 1.25rem;
 }
 
 .block-2 {
 	grid-area: C;
 	height: 100%;
 	background: blue;
-	border-bottom-right-radius: 1.25rem;
 	// margin-top: 1rem;
 
 }
 
 // margin: 3rem 3rem 6rem 3rem;
 
-
 .hide {
 	display: none;
 }
 
-
-
-
-.Iam {
-	padding: 2em 5em;
-	// font: normal 40px/50px Montserrat, sans-serif;
-	font-size: 1.6rem;
-	color: #999;
-}
-
-.Iam p {
-	height: 50px;
-	float: left;
-	margin-right: 0.3em;
-}
-
-.Iam b {
-	float: left;
-	overflow: hidden;
-	position: relative;
-	height: 50px;
-	top: 40px;
-}
-
-.Iam .innerIam {
-	// display: inline-block;
-	color: $dark-red;
-	position: relative;
-	white-space: nowrap;
-	top: 0;
-	left: 0;
-
-	span {
-		display: block;
-	}
-
-
-	/*animation*/
-	-webkit-animation:move 5s;
-	-moz-animation:move 5s;
-	-ms-animation:move 5s;
-	-o-animation:move 5s;
-	animation:move 5s;
-	/*animation-iteration-count*/
-	-webkit-animation-iteration-count:infinite;
-	-moz-animation-iteration-count:infinite;
-	-ms-animation-iteration-count:infinite;
-	-o-animation-iteration-count:infinite;
-	animation-iteration-count:infinite;
-	/*animation-delay*/
-	-webkit-animation-delay:1s;
-	-moz-animation-delay:1s;
-	-ms-animation-delay:1s;
-	-o-animation-delay:1s;
-	animation-delay:1s;
+/* Knockout text within a dark area */
+.multiply {
+	color: white;
+	mix-blend-mode: multiply;
+	background-color: rgb(47, 47, 47);
+  }
+  
+  /* Knockout text within a bright area */
+  .screen {
+	color: $new-grey;
+	mix-blend-mode: screen;
+	background-color: rgb(244, 220, 211);
+  }
 }
 
 svg.toggle {

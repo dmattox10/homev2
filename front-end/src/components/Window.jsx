@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, cloneElement, Children } from "react"
 import cuid from 'cuid'
 const Window = (props) => {
     const { children, title, visibleSection } = props
@@ -29,7 +29,13 @@ const Window = (props) => {
                 </div>
             </div>
             <div className="window-content">
-                {children}
+                {
+                    Children.map(children, (child) => {
+                        return cloneElement(child, {
+                            active
+                        })
+                    })
+                }
             </div>
         </div>
     )

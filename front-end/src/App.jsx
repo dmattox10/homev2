@@ -12,7 +12,7 @@ import Testimonials from './components/sections/Testimonials'
 import Work from './components/sections/Work'
 
 const App = () => {
-  const [isPro, setPro] = useState(false)
+  const [isPro, setPro] = useState(true)
   const [navOpen, setNavOpen] = useState(false)
 
   const menus = [

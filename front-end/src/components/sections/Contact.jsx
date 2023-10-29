@@ -1,10 +1,10 @@
 import { useInView } from "react-intersection-observer"
 
 const Contact = (props) => {
+    const { active } = props
     return (
         <div className="section-content">
-            <p>Contact</p>
-            <div>Content</div>
+            <p style={active ? {color: 'crimson'} : {color: 'white'}}>Contact</p>
         </div>
     )
 }

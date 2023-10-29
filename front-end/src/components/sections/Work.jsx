@@ -1,8 +1,7 @@
-const Work = ({ setVisibleSection, headerRef, id }) => {
+const Work = ({ setVisibleSection, headerRef, id, active }) => {
     return (
         <div className="section-content">
-            <p>Work</p>
-            <div>Content</div>
+            <p style={active ? {color: 'crimson'} : {color: 'white'}}>Work</p>
         </div>
     )
 }

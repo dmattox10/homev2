@@ -1,8 +1,7 @@
-const Testimonials = ({ setVisibleSection, headerRef, id }) => {
+const Testimonials = ({ setVisibleSection, headerRef, id, active }) => {
     return (
         <div className="section-content">
-            <p>Testimonials</p>
-            <div>Content</div>
+            <p style={active ? {color: 'crimson'} : {color: 'white'}}>Testimonials</p>
         </div>
     )
 }
