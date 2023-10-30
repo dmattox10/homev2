@@ -1,6 +1,6 @@
 const Grow = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div className="blue">
+        <div className="bg-tall-cool">
            
         </div>
     )

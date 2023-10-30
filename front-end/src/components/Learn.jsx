@@ -1,6 +1,6 @@
 const Learn = ({ setVisibleSection, headerRef, id }) => {
     return (
-        <div className="red">
+        <div className="bg-tall-warm">
             
         </div>
     )
