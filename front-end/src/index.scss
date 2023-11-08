@@ -644,15 +644,16 @@ nav ul li a.active::after {
 
 	nav {
 		align-items: center;
-		height: 100vh;
 		text-align: center;
 		z-index: 12;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 10rem;
-		margin-top: auto;
+		// margin-top: auto;
 		background: transparent;
 		width: 100%;
+		position: absolute;
+		top: 2rem;
 	}
 
 	nav ul {
