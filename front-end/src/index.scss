@@ -869,16 +869,16 @@ nav ul li a.active::after {
 
 /* Knockout text within a dark area */
 .multiply {
-	color: rgb(244, 220, 211);
+	color: white;
 	mix-blend-mode: multiply;
 	background-color: rgb(47, 47, 47);
   }
   
   /* Knockout text within a bright area */
   .screen {
-	color: $new-grey;
+	color: black;
 	mix-blend-mode: screen;
-	background-color: rgb(244, 220, 211);
+	background-color:rgb(47, 47, 47);
   }
 
   .darken {
@@ -890,7 +890,7 @@ nav ul li a.active::after {
   .lighten {
 	color: black;
 	mix-blend-mode: lighten;
-	background-color: rgb(244, 220, 211);
+	background-color: rgb(47, 47, 47);
   }
 }
 
