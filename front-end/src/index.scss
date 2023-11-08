@@ -496,7 +496,7 @@ nav ul li a.active::after {
 	background: url('./assets/code-col-small.jpg');
 }
 
-.text {
+.big {
 	background-color: white;
 	color: black;
 	font-size: 8vw; /* Responsive font size */
@@ -514,6 +514,32 @@ nav ul li a.active::after {
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
+	  border: 2rem solid;
+  }
+
+  .medium {
+	background-color: white;
+	color: black;
+	font-size: 5vw; /* Responsive font size */
+	font-weight: bold;
+	// margin: 0 auto; /* Center the text container */
+	// padding: 10px;
+	width: 100%;
+	text-align: center; /* Center text */
+	position: absolute; /* Position text */
+	top: 50%; /* Position text in the middle */
+	left: 50%; /* Position text in the middle */
+	transform: translate(-50%, -50%); /* Position text in the middle */
+	// mix-blend-mode: screen; /* This makes the cutout text possible */
+	position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  overflow-wrap: break-word;
+	  border: 2rem solid transparent;
+	  padding: 4rem;
+	  box-sizing:border-box;
+  	  box-shadow:0 0 0 2rem black inset;
   }
 
 .full {
@@ -610,8 +636,13 @@ nav ul li a.active::after {
 		}
 	}
 
+	.container {
+		width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+
 	nav {
-		padding-top: 0;
 		align-items: center;
 		height: 100vh;
 		text-align: center;
@@ -621,6 +652,7 @@ nav ul li a.active::after {
 		margin-bottom: 10rem;
 		margin-top: auto;
 		background: transparent;
+		width: 100%;
 	}
 
 	nav ul {
@@ -641,12 +673,14 @@ nav ul li a.active::after {
 	.brand {
 		width: 100%;
 		margin-top: 3rem;
+		padding: 0 1rem;
 		position: relative;
 		z-index: 9996;
 
 		a {
 			position: relative;
 			z-index: 9997;
+			width: 100%;
 		}
 	}
 
@@ -692,6 +726,7 @@ nav ul li a.active::after {
 		.App {
 			background: transparent;
 			width: 100%;
+			margin: unset;
 			.wrap {
 				background-color: transparent;
 				// margin-top: -1rem;
@@ -701,27 +736,27 @@ nav ul li a.active::after {
 					position: relative;
 					background: transparent;
 					width: 100%;
-
+					margin: unset;
 					.section-body {
 						color: $white;
 						z-index: 999;
 						position: relative;
 						background: transparent;
 
-						div {
+						div.section-content {
 							z-index: 1000;
 							// background-color: rgba(0,0,0,.7);
 							margin: 0 2rem;
 
 							p {
-								text-align: center;
-
+								// text-align: center;
+								display: none;
 							}
 
 							div {
-								margin-top: 6rem;
+								// margin-top: 6rem;
 								background: transparent;
-								padding: 5%;
+								// padding: 5%;
 							}
 						}
 					}
@@ -833,7 +868,7 @@ nav ul li a.active::after {
 
 /* Knockout text within a dark area */
 .multiply {
-	color: white;
+	color: rgb(244, 220, 211);
 	mix-blend-mode: multiply;
 	background-color: rgb(47, 47, 47);
   }
@@ -842,6 +877,18 @@ nav ul li a.active::after {
   .screen {
 	color: $new-grey;
 	mix-blend-mode: screen;
+	background-color: rgb(244, 220, 211);
+  }
+
+  .darken {
+	color: white;
+	mix-blend-mode: darken;
+	background-color:  rgb(47, 47, 47);
+  }
+
+  .lighten {
+	color: black;
+	mix-blend-mode: lighten;
 	background-color: rgb(244, 220, 211);
   }
 }
