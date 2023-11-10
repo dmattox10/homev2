@@ -14,17 +14,23 @@ const MobileWin = (props) => {
     let dots = []
     for (let i = 0; i < 3; i++) {
         dots.push(
-        <div key={cuid()} className="navigator">
-        {
-            active ? <span className="icon red"></span> : <span className="icon grey"></span>
-        }
-        </div>)
+            <div key={cuid()} className="navigator">
+                {
+                    active
+                        ?
+                        <span className="icon red"></span>
+                        :
+                        <span className="icon grey"></span>
+                }
+            </div>)
     }
     return (
         <div className="main-window">
+            <div className="titlebar">
                 <div className="navigation">
-                    { dots }
+                    {dots}
                 </div>
+            </div>
             <div className="window-content">
                 {
                     Children.map(children, (child) => {
