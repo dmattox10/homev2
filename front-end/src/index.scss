@@ -13,6 +13,14 @@ $secondary: $dark-red;
 	box-sizing: border-box;
 }
 
+:root {
+	--crsl-bg: transparent;
+	--box-bg: #1e272e;
+	--box-shadow: #0000001c;
+	--box-shadow-border: #0000000f;
+	--box-border: #white;
+  }
+
 #root {
 	z-index: 0;
 	position: relative;
@@ -272,10 +280,20 @@ nav ul li a.down::after {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
+	// box-shadow: inset 0 13px 25px rgba(255,255,255,0.1), 0 3px 5px rgba(0,0,0,0.2), 0 10px 13px rgba(0,0,0,0.1);
 }
+
+.icon-border {
+  
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, .9);
+	// box-shadow: rgb(114, 114, 114) 0px 0px 8px 4px inset;
+
+  }
 
 .red {
 	background-color: crimson;
+	// box-shadow: inset 0 13px 25px rgba(255,255,255,0.1), 0 3px 5px rgba(0,0,0,0.2), 0 10px 13px rgba(0,0,0,0.1);
+
 }
 
 .grey {
@@ -582,34 +600,56 @@ nav ul li a.active::after {
 
 }
 
+blockquote {
+	height: 100%;
+}
+
 // margin: 3rem 3rem 6rem 3rem;
 
 .hide {
 	display: none;
 }
 
-/* Knockout text within a dark area */
-.multiply {
-	color: white;
-	mix-blend-mode: multiply;
-	background-color: rgb(47, 47, 47);
-  }
+// /* Knockout text within a dark area */
+// .multiply {
+// 	color: white;
+// 	mix-blend-mode: multiply;
+// 	background-color: rgb(47, 47, 47);
+//   }
   
-  /* Knockout text within a bright area */
-  .screen {
-	color: $new-grey;
-	mix-blend-mode: screen;
-	background-color: rgb(244, 220, 211);
-  }
+//   /* Knockout text within a bright area */
+//   .screen {
+// 	color: $new-grey;
+// 	mix-blend-mode: screen;
+// 	background-color: rgb(244, 220, 211);
+//   }
 
-@keyframes slideIn {
-	from {}
+// .mb-5 {
+//     margin-bottom: 3rem!important;
+// }
 
-	to {
-		transform: translateX(0);
-	}
-}
 
+// .my-4 {
+//     margin-top: 1.5rem!important;
+//     margin-bottom: 1.5rem!important;
+// }
+
+// .row {
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//     margin-right: -15px;
+//     margin-left: -15px;
+// }
+
+// .col-12 {
+//     -webkit-box-flex: 0;
+//     -ms-flex: 0 0 100%;
+//     flex: 0 0 100%;
+//     max-width: 100%;
+// }
 @media screen and (max-width: 1000px) {
 	header {
 		// height: 100vh;
@@ -816,11 +856,15 @@ nav ul li a.active::after {
   }
 
   .text-red {
-	color: crimson;
-  }
+	color: rbga(220,20,60,.6)
+}
 
   .text-grey {
 	color: #eee;
+  }
+
+  .text-shadow {
+	text-shadow: 1px 1px white, -1px -1px #444;
   }
 
 .full {
@@ -866,6 +910,8 @@ nav ul li a.active::after {
 	display: none;
 }
 
+}
+
 /* Knockout text within a dark area */
 .multiply {
 	color: white;
@@ -886,9 +932,9 @@ nav ul li a.active::after {
 	background-color:  rgb(47, 47, 47);
   }
 
-  .multiply {
+  .darken {
 	color: white;
-	mix-blend-mode: exclusion;
+	mix-blend-mode: darken;
 	background-color: rgb(47,47,47);
   }
 
@@ -897,7 +943,6 @@ nav ul li a.active::after {
 	mix-blend-mode: lighten;
 	background-color: rgb(47, 47, 47);
   }
-}
 
 svg.toggle {
 	animation: heartbeat 1.2s linear infinite;

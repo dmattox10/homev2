@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useScrollDirection } from '../hooks/useScrollDirection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPlus, faX } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faX } from '@fortawesome/free-solid-svg-icons'
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import StyledIcon from './StyledIcon'
 // const MenuToggle = styled.div`
@@ -23,6 +23,7 @@ import StyledIcon from './StyledIcon'
 // 	text-transform: uppercase;
 // 	font-size: 1.6rem;
 // `
+
 
 const NavItemDown = styled.a`
     &:before{
@@ -51,6 +52,7 @@ const NavItemUp = styled.a`
 const Navbar = props => {
     const { menus, visibleSection, headerRef, navOpen, setNavOpen } = props
     const scrollDirection = useScrollDirection(headerRef);
+    let isMobile = useScreenWidth()
     // let NavItem = NavItemDown
     // useEffect(() => {
     //     if (scrollDirection === 'up') {
@@ -63,7 +65,7 @@ const Navbar = props => {
     function toggleNav() {
         setNavOpen(prevNav => !prevNav)
     }
-    let isMobile = useScreenWidth()
+
     let NavItems = (
         <ul>
             {menus.map((menuItem, index) => (
@@ -98,20 +100,20 @@ const Navbar = props => {
                                 isMobile ?
                                     navOpen ?
                                         <StyledIcon>
-                                            <FontAwesomeIcon  className='toggle' color='white' icon={faX} />
+                                            <FontAwesomeIcon  className='toggle' color='#eee' icon={faX} />
                                         </StyledIcon>
                                         :
                                         <StyledIcon>
-                                            <FontAwesomeIcon className='toggle' color='white' icon={faPlus} />
+                                            <FontAwesomeIcon className='toggle' color='#eee' icon={faPlus} />
                                         </StyledIcon>
                                     :
                                     navOpen ?
                                         <StyledIcon>
-                                            <FontAwesomeIcon className='toggle' color='white' icon={faPlus} />
+                                            <FontAwesomeIcon className='toggle' color='#eee' icon={faPlus} />
                                         </StyledIcon>
                                         :
                                         <StyledIcon>
-                                            <FontAwesomeIcon className='toggle' color='white' icon={faX} />
+                                            <FontAwesomeIcon className='toggle' color='#eee' icon={faX} />
                                         </StyledIcon>
                             }
                         </a>

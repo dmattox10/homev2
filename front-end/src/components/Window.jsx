@@ -16,7 +16,7 @@ const Window = (props) => {
         dots.push(
         <div key={cuid()} className="navigator">
         {
-            active ? <span className="icon red"></span> : <span className="icon grey"></span>
+            active ? <span className="icon red icon-border"></span> : <span className="icon grey icon-border"></span>
         }
         </div>)
     }
