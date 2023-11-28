@@ -89,7 +89,7 @@ const Carousel = () => {
   };
 
   return (
-    <div>
+    <div className='carbon'>
       <Swiper ref={ref}>
         {
             reviews.map((review, index) => (

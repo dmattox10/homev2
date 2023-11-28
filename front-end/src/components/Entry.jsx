@@ -16,7 +16,7 @@ const Entry = (review) => {
         return content
     }
     return (
-        <div className="carousel-item active text-center p-4">
+        <div className="carousel-item active text-center p-4 carbon">
         <blockquote className="blockquote text-center">
           <p className="mb-0"><FontAwesomeIcon color='crimson' icon={faQuoteLeft}/>
             {txt}
@@ -35,10 +35,10 @@ const Entry = (review) => {
             />
             </cite>
           </footer>
-          <p className="client-review-stars">
+        </blockquote>
+        <p className="client-review-stars">
             {renderStars(review.stars)}
           </p>
-        </blockquote>
       </div>
     )
 }
