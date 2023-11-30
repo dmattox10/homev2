@@ -41,10 +41,10 @@ const Entry = (props) => {
           -{username}
           </p>
           <p className="client-review-stars">
-          <FontAwesomeIcon style={{float: 'left'}} color='crimson' icon={faCircleLeft} size='xl' onClick={() => goPrev(true)}/>
+          <FontAwesomeIcon style={{float: 'left'}} color='crimson' icon={faCircleLeft} size='xl' onClick={() => goPrev()}/>
 
             {renderStars(stars)}
-            <FontAwesomeIcon style={{float: 'right'}} color='crimson' icon={faCircleRight} size='xl' onClick={() => goNext(true)}/>
+            <FontAwesomeIcon style={{float: 'right'}} color='crimson' icon={faCircleRight} size='xl' onClick={() => goNext()}/>
 
           </p>
          

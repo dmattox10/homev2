@@ -78,78 +78,56 @@ const reviews = [
 function Carousel(props) {
 
     const ref = useRef(null)
-    let [beenClicked, setClicked] = useState(false)
     let [currIndex, setIndex] = useState(0)
-    let [delay, setDelay] = useState(4500)
+    let [delay, setDelay] = useState(4000)
 
-  const goNext = (clicked) => {
+  const goNext = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
-      ref.current.swiper.slideNext();
-    }
-    if (clicked) {
-      setClicked(true)
       if (currIndex < 9) {
         setIndex(prevIndex => prevIndex + 1)
+        ref.current.swiper.slideNext()
       }
       else {
         setIndex(0)
         for(let i = 0; i < 10; i ++) {
-          goPrev(false)
+          ref.current.swiper.slidePrev()
         }
         
       }
     }
-  };
+      
+  }
 
-  const goPrev = (clicked) => {
+  const goPrev = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
-      ref.current.swiper.slidePrev();
-    }
-    if (clicked) {
-      setClicked(true)
-      if (currIndex == 0) {
+      if (currIndex > 0) {
+        setIndex(prevIndex => prevIndex - 1)
+        ref.current.swiper.slidePrev();
+      } else {
         for(let i = 0; i < 10; i ++) {
-          goNext(false)
+          ref.current.swiper.slideNext()
         }
         setIndex(9)
       }
+    }
+      
+      
+    
+  }
+  useInterval(() => {
+      if (currIndex < 10) {
+        setIndex(prevIndex => prevIndex + 1)
+        goNext()
+      }
       else {
-     
-        setIndex(prevIndex => prevIndex - 1)
-
-      }
-    }
-  }
-  const run = () => {
-    return useInterval(() => {
-      if (!beenClicked) {
-        if (currIndex < 10) {
-          setIndex(prevIndex => prevIndex + 1)
-          goNext(false)
-        }
-        else {
-          setIndex(0)
-          for(let i = 0; i < 10; i ++) {
-            goPrev(false)
-          }
+        setIndex(0)
+        for(let i = 0; i < 10; i ++) {
+          goPrev()
         }
       }
-    }, !beenClicked ? delay : null)
-  }
 
-  const reset = () => {
-    return useInterval(() => {
-      setClicked(false)
-      run()
-    }, 10000)
-  }
+  }, delay)
 
-  useEffect(() => {
-    if (beenClicked) {
-      reset()
-    }
-  }, [])
-  run()
   return (
     <div className='main'>
       <Swiper ref={ref}>
