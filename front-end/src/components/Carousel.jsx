@@ -88,6 +88,16 @@ function Carousel(props) {
     }
     if (clicked) {
       setClicked(true)
+      if (currIndex < 9) {
+        setIndex(prevIndex => prevIndex + 1)
+      }
+      else {
+        setIndex(0)
+        for(let i = 0; i < 10; i ++) {
+          goPrev(false)
+        }
+        
+      }
     }
   };
 
@@ -97,6 +107,17 @@ function Carousel(props) {
     }
     if (clicked) {
       setClicked(true)
+      if (currIndex == 0) {
+        for(let i = 0; i < 10; i ++) {
+          goNext(false)
+        }
+        setIndex(9)
+      }
+      else {
+     
+        setIndex(prevIndex => prevIndex - 1)
+
+      }
     }
   }
   const run = () => {
