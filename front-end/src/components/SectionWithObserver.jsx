@@ -21,9 +21,10 @@ const SectionWithObserver  = (props) => {
     <section id={id} ref={ref}>
       <div className={isMobile ? navOpen ? "section-body hide" : "section-body" : 'section-body'}>
         {isMobile ? 
-			<MobileWin title={id} visibleSection={visibleSection}>{children}</MobileWin> 
-			: 
-			<Window title={id} visibleSection={visibleSection}>{children}</Window>}
+			<Window title={id} visibleSection={visibleSection}>{children}</Window>
+      :
+      <MobileWin title={id} visibleSection={visibleSection}>{children}</MobileWin> 
+      }
       </div>
     </section>
   )

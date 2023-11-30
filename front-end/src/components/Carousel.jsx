@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useInterval } from '../hooks/useInterval';
 import Entry from '../components/Entry'
 // import 'bootstrap/dist/css/bootstrap.css'
 import Swiper from 'react-id-swiper'
@@ -9,6 +10,7 @@ const responsive = {
     568: { items: 2 },
     1024: { items: 3 },
 };
+
 
 const reviews = [
     {
@@ -73,32 +75,69 @@ const reviews = [
     }
 ]
 
-const Carousel = () => {
-    const ref = useRef(null)
+function Carousel(props) {
 
-  const goNext = () => {
+    const ref = useRef(null)
+    let [beenClicked, setClicked] = useState(false)
+    let [currIndex, setIndex] = useState(0)
+    let [delay, setDelay] = useState(4500)
+
+  const goNext = (clicked) => {
     if (ref.current !== null && ref.current.swiper !== null) {
       ref.current.swiper.slideNext();
     }
-  };
-
-  const goPrev = () => {
-    if (ref.current !== null && ref.current.swiper !== null) {
-      ref.current.swiper.slidePrev();
+    if (clicked) {
+      setClicked(true)
     }
   };
 
+  const goPrev = (clicked) => {
+    if (ref.current !== null && ref.current.swiper !== null) {
+      ref.current.swiper.slidePrev();
+    }
+    if (clicked) {
+      setClicked(true)
+    }
+  }
+  const run = () => {
+    return useInterval(() => {
+      if (!beenClicked) {
+        if (currIndex < 10) {
+          setIndex(prevIndex => prevIndex + 1)
+          goNext(false)
+        }
+        else {
+          setIndex(0)
+          for(let i = 0; i < 10; i ++) {
+            goPrev(false)
+          }
+        }
+      }
+    }, !beenClicked ? delay : null)
+  }
+
+  const reset = () => {
+    return useInterval(() => {
+      setClicked(false)
+      run()
+    }, 10000)
+  }
+
+  useEffect(() => {
+    if (beenClicked) {
+      reset()
+    }
+  }, [])
+  run()
   return (
-    <div className='carbon'>
+    <div className='main'>
       <Swiper ref={ref}>
         {
             reviews.map((review, index) => (
-                <div key={index} className="carousel-inner" role="listbox"><Entry review={review} /></div>
+                <div key={index} className="carousel-inner" role="listbox"><Entry review={review} goNext={goNext} goPrev={goPrev} /></div>
             ))
         }
       </Swiper>
-      <button onClick={() => goPrev()}>Prev</button>
-      <button onClick={() => goNext()}>Next</button>
     </div>
   )
 }

@@ -22,9 +22,9 @@ const Services = ({ setVisibleSection, headerRef, active }) => {
    ]
 
     return (
-        <div className="section-content">
+        <div className="section-content main">
             <p style={active ? {color: 'crimson'} : {color: 'white'}}>Services</p>
-            <div>
+            <div className="hero-wrapper">
                 <div className="hero">
                     <div className="block-0 ">
                         <div className="bg-warm">

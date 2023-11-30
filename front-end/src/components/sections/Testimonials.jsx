@@ -4,9 +4,11 @@ const Testimonials = ({ setVisibleSection, headerRef, id, active }) => {
 
 
     return (
-        <div className="section-content">
-            <p style={active ? { color: 'crimson' } : { color: 'white' }}>Testimonials</p>
+        <div className="section-content main">
+            <p className='heading' style={active ? { color: 'crimson' } : { color: 'white' }}>Testimonials</p>
+            <div className='carbon'>
             <Carousel />
+            </div>
         </div>
     )
 }

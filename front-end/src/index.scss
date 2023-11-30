@@ -327,7 +327,7 @@ nav ul li a.down::after {
 
 		p {
 			margin-top: -3rem; // this line is the difference between the two.
-			font-size: x-large;
+			font-size: xx-large;
 		}
 	}
 
@@ -374,15 +374,58 @@ nav ul li a.active::after {
 	background: transparent;
 }
 
-.carousel-item {
-	margin-top: 8rem;
-	background-color: rgb(32, 32, 32);
-background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1)), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
-background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
-background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
-border-radius: 2rem;
+.swiper-container {
+	padding: 4rem 2rem 0 2rem;
 }
 
+.swiper-wrapper {
+	margin-top: 2rem;
+	
+}
+
+.blockquote-footer {
+	color: #eee;
+	font-family: 'Lucida Sans', Arial, sans-serif; 
+	font-size: 16px; 
+	line-height: 26px; 
+	text-indent: 3rem; 
+	margin: 2rem 0;
+}
+
+.carbon {
+	background-color: rgb(32, 32, 32);
+	background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1)), linear-gradient(45deg, $new-grey 25%, transparent 25%, transparent 75%, $new-grey 75%, $new-grey), linear-gradient(45deg, $new-grey 25%, transparent 25%, transparent 75%, $new-grey 75%, $new-grey), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+	background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
+	background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+	border-radius: 2rem;
+}
+
+.carousel-inner {
+	
+	
+	.carousel-item {
+		margin-top: 10rem;
+		.blockquote{
+			height: 100%;
+			
+			div {
+				p {
+					height: 80%;
+					color: #eee;
+				}
+			}
+		}
+	}
+}
+
+.client-review-stars {
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+div.review {
+	height: 55% !important;
+}
 
 #root {
 
@@ -453,6 +496,7 @@ border-radius: 2rem;
 						p {
 							text-align: center;
 							margin-top: -5rem;
+							
 						}
 
 						//div {
@@ -467,13 +511,19 @@ border-radius: 2rem;
 
 .section-content {
 	padding: 5rem 4rem 4rem 4rem;
-
+	p.heading {
+		font-family: 'Open Sans', sans-serif; 
+							font-size: 30px; 
+							font-weight: 600; 
+							line-height: 40px; 
+							text-transform: uppercase;
+	}
 	div {
 		height: 100%;
 		// padding-top: 2.5rem;
 
 		.hero {
-			padding-top: 7rem;
+			padding-top: 6em;
 			text-align: center;
 		}
 	}
@@ -609,13 +659,7 @@ border-radius: 2rem;
 
 }
 
-blockquote {
-	height: 100%;
-	p {
-		height: 60%;
-		color: #eee;
-	}
-}
+#client-testimonial-carousel {min-height: 200px;}
 
 // margin: 3rem 3rem 6rem 3rem;
 
@@ -775,6 +819,14 @@ blockquote {
 				z-index: 9997;
 			}
 		}
+	}
+
+	.swiper-container {
+		padding: 0rem 2rem;
+	}
+
+	.swiper-wrapper {
+		margin-top: 10px;
 	}
 
 	#root {

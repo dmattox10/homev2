@@ -51,7 +51,7 @@ const NavItemUp = styled.a`
 
 const Navbar = props => {
     const { menus, visibleSection, headerRef, navOpen, setNavOpen } = props
-    const scrollDirection = useScrollDirection(headerRef);
+    let scrollDirection = useScrollDirection(headerRef);
     let isMobile = useScreenWidth()
     // let NavItem = NavItemDown
     // useEffect(() => {
