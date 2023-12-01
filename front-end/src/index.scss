@@ -375,11 +375,12 @@ nav ul li a.active::after {
 }
 
 .swiper-container {
-	padding: 4rem 2rem 0 2rem;
+	// padding: 4rem 2rem 0 2rem;
+	padding:0 4rem;
 }
 
 .swiper-wrapper {
-	margin-top: 2rem;
+	margin-top: 6rem;
 	
 }
 
@@ -823,6 +824,7 @@ div.review {
 
 	.swiper-container {
 		padding: 0rem 2rem;
+		
 	}
 
 	.swiper-wrapper {
